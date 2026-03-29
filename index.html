@@ -4,6 +4,9 @@
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Impulse Sports India | Pro Power League</title>
+    
+    <link rel="icon" type="image/png" href="https://i.ibb.co/Ddz9mTm/image-2026-03-29-191442954.png">
+
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&family=Lexend:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
@@ -69,9 +72,24 @@
 
         /* HEADER TRANSITION */
         header { transition: background 0.3s ease, height 0.3s ease; }
+
+        /* SCROLL TO TOP BUTTON */
+        #scrollTopBtn {
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease;
+        }
+        #scrollTopBtn.show {
+            opacity: 1;
+            visibility: visible;
+        }
     </style>
 </head>
 <body class="bg-surface">
+
+<button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" id="scrollTopBtn" class="fixed bottom-10 right-10 z-[100] bg-primary w-16 h-16 rounded-full flex items-center justify-center hover:bg-[#ff742d] hover:-translate-y-2 transition-all active:scale-90 group">
+    <span class="material-symbols-outlined text-black font-black text-4xl group-hover:animate-bounce">arrow_upward</span>
+</button>
 
 <header id="main-header" class="fixed top-0 w-full z-50 bg-[#0f131d]/90 backdrop-blur-md flex justify-between items-center px-10 h-32">
     <a href="javascript:void(0)" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="flex items-center gap-6 cursor-pointer group">
@@ -175,8 +193,8 @@
             
             <div class="flex justify-center mb-16">
                 <div class="inline-flex bg-surface-container p-2">
-                    <button onclick="showTab('athlete')" id="btn-athlete" class="tab-active px-16 py-6 font-black uppercase text-xl transition-all">Athlete</button>
-                    <button onclick="showTab('volunteer')" id="btn-volunteer" class="tab-inactive px-16 py-6 font-black uppercase text-xl transition-all">Volunteer</button>
+                    <button onclick="showTab('athlete')" id="btn-athlete" class="tab-active px-16 py-6 font-black uppercase text-xl">Athlete</button>
+                    <button onclick="showTab('volunteer')" id="btn-volunteer" class="tab-inactive px-16 py-6 font-black uppercase text-xl">Volunteer</button>
                 </div>
             </div>
 
@@ -223,35 +241,33 @@
 </footer>
 
 <script>
-    // Tab Switching Logic with smooth fade
     function showTab(type) {
         const aTab = document.getElementById('tab-athlete');
         const vTab = document.getElementById('tab-volunteer');
         const aBtn = document.getElementById('btn-athlete');
         const vBtn = document.getElementById('btn-volunteer');
-
         if(type === 'athlete') {
-            vTab.classList.add('hidden');
-            aTab.classList.remove('hidden');
+            vTab.classList.add('hidden'); aTab.classList.remove('hidden');
             aBtn.className = 'tab-active px-16 py-6 font-black uppercase text-xl';
             vBtn.className = 'tab-inactive px-16 py-6 font-black uppercase text-xl';
         } else {
-            aTab.classList.add('hidden');
-            vTab.classList.remove('hidden');
+            aTab.classList.add('hidden'); vTab.classList.remove('hidden');
             vBtn.className = 'tab-active px-16 py-6 font-black uppercase text-xl';
             aBtn.className = 'tab-inactive px-16 py-6 font-black uppercase text-xl';
         }
     }
 
-    // Shrink header on scroll for better transition feel
+    // Scroll Logic: Header shrink and Top Button visibility
     window.onscroll = function() {
         const header = document.getElementById('main-header');
-        if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-            header.classList.remove('h-32');
-            header.classList.add('h-24', 'bg-[#0f131d]');
+        const topBtn = document.getElementById('scrollTopBtn');
+        
+        if (document.body.scrollTop > 150 || document.documentElement.scrollTop > 150) {
+            header.classList.remove('h-32'); header.classList.add('h-24', 'bg-[#0f131d]');
+            topBtn.classList.add('show');
         } else {
-            header.classList.add('h-32');
-            header.classList.remove('h-24', 'bg-[#0f131d]');
+            header.classList.add('h-32'); header.classList.remove('h-24', 'bg-[#0f131d]');
+            topBtn.classList.remove('show');
         }
     };
 </script>
