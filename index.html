@@ -3,10 +3,8 @@
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Impulse Sports India | Pro Power League</title>
-    
+    <title>Impulse Sports India | Hercules</title>
     <link rel="icon" type="image/png" href="https://i.ibb.co/Ddz9mTm/image-2026-03-29-191442954.png">
-
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&family=Lexend:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
@@ -31,17 +29,12 @@
       }
     </script>
     <style>
-        /* SMOOTH TRANSITION CONFIG */
         html { scroll-behavior: smooth; }
         body { background-color: #0a0e17; color: #ebedfb; font-family: 'Inter', sans-serif; overflow-x: hidden; }
-        
-        /* GLOBAL NO BORDER RULE */
         * { border: none !important; outline: none !important; box-shadow: none !important; }
-        
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-        /* HERO TRANSITION */
         .hero-bg {
             background: linear-gradient(rgba(10, 14, 23, 0.7), rgba(10, 14, 23, 0.9)), 
                         url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop');
@@ -66,23 +59,15 @@
         .tab-active { background-color: #ff915d !important; color: #000000 !important; transform: scale(1.05); z-index: 10; transition: all 0.3s ease; }
         .tab-inactive { background-color: #1a1f2c !important; color: #ebedfb !important; opacity: 0.5; transition: all 0.3s ease; }
         
-        /* ARENA CARD TRANSITIONS */
         .arena-card img { transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); }
         .arena-card:hover img { transform: scale(1.12); }
 
-        /* HEADER TRANSITION */
         header { transition: background 0.3s ease, height 0.3s ease; }
+        #scrollTopBtn { opacity: 0; visibility: hidden; transition: all 0.4s ease; }
+        #scrollTopBtn.show { opacity: 1; visibility: visible; }
 
-        /* SCROLL TO TOP BUTTON */
-        #scrollTopBtn {
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.4s ease;
-        }
-        #scrollTopBtn.show {
-            opacity: 1;
-            visibility: visible;
-        }
+        /* FIX: Adds space so text starts below the menu */
+        .page-wrapper { padding-top: 130px; }
     </style>
 </head>
 <body class="bg-surface">
@@ -104,8 +89,8 @@
     </nav>
 </header>
 
-<main>
-    <section class="relative min-h-screen flex flex-col justify-center px-10 hero-bg">
+<main class="page-wrapper">
+    <section class="relative min-h-[90vh] flex flex-col justify-center px-10 hero-bg">
         <div class="relative z-10 max-w-6xl space-y-10">
             <h1 class="font-headline font-black text-8xl md:text-[11rem] leading-[0.75] uppercase text-white italic">
                 PRO POWER <br/> <span class="text-primary italic">LEAGUE</span>
@@ -123,29 +108,22 @@
     <section class="py-32 px-10" id="arena">
         <div class="max-w-7xl mx-auto">
             <h2 class="font-headline font-black text-8xl uppercase mb-20 italic">The <span class="text-primary">Arena</span></h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <div class="arena-card relative overflow-hidden aspect-[4/5] bg-surface-container">
                     <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=800&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover" alt="Grip">
                     <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
                     <div class="absolute bottom-10 left-10">
-                        <h3 class="font-headline text-5xl font-black uppercase text-white leading-none">Grip<br><span class="text-primary">Hold</span></h3>
+                        <h3 class="font-headline text-5xl font-black uppercase text-white leading-none">2 Grip<br><span class="text-primary">Hold</span></h3>
                         <p class="font-black mt-4 tracking-widest text-sm bg-primary text-black px-4 py-1 inline-block">250KG STATIC</p>
                     </div>
                 </div>
+                
                 <div class="arena-card relative overflow-hidden aspect-[4/5] bg-surface-container">
-                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=800&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover" alt="Full Power">
+                    <img src="https://i.ibb.co/hxLHBjvr/image-2026-03-30-135751696.png" class="absolute inset-0 w-full h-full object-cover" alt="Hercules">
                     <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
                     <div class="absolute bottom-10 left-10">
-                        <h3 class="font-headline text-5xl font-black uppercase text-white leading-none">Full<br><span class="text-primary">Power</span></h3>
-                        <p class="font-black mt-4 tracking-widest text-sm bg-primary text-black px-4 py-1 inline-block">S/B/D TOTAL</p>
-                    </div>
-                </div>
-                <div class="arena-card relative overflow-hidden aspect-[4/5] bg-surface-container">
-                    <img src="https://images.unsplash.com/photo-1515777315835-281b94c9589f?q=80&w=800&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover" alt="Hercules Hang">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
-                    <div class="absolute bottom-10 left-10">
-                        <h3 class="font-headline text-5xl font-black uppercase text-white leading-none">Hercules<br><span class="text-primary">Pole</span></h3>
-                        <p class="font-black mt-4 tracking-widest text-sm bg-primary text-black px-4 py-1 inline-block">150KG HANG</p>
+                        <h3 class="font-headline text-5xl font-black uppercase text-white leading-none">Hercules<br><span class="text-primary">Hold</span></h3>
+                        <p class="font-black mt-4 tracking-widest text-sm bg-primary text-black px-4 py-1 inline-block">THE GAUNTLET</p>
                     </div>
                 </div>
             </div>
@@ -159,7 +137,6 @@
                 <p class="text-on-surface-variant text-2xl mt-4 font-light">Witness the intensity of previous showdowns.</p>
             </div>
         </div>
-        
         <div class="flex gap-10 px-10 overflow-x-auto no-scrollbar pb-10">
             <div class="flex-none w-[85vw] md:w-[700px] group cursor-pointer">
                 <div class="relative aspect-video overflow-hidden bg-surface-container">
@@ -172,7 +149,6 @@
                 </div>
                 <h4 class="font-headline text-4xl font-black mt-8 uppercase italic group-hover:text-primary transition-colors">Season 1: The Raw Iron</h4>
             </div>
-
             <div class="flex-none w-[85vw] md:w-[700px] group cursor-pointer">
                 <div class="relative aspect-video overflow-hidden bg-surface-container">
                     <img src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Tape 2">
@@ -190,47 +166,22 @@
     <section class="py-40 px-10" id="registration">
         <div class="max-w-5xl mx-auto text-center">
             <h2 class="font-headline font-black text-7xl uppercase mb-16 italic">Join the <span class="text-primary">Ranks</span></h2>
-            
             <div class="flex justify-center mb-16">
                 <div class="inline-flex bg-surface-container p-2">
                     <button onclick="showTab('athlete')" id="btn-athlete" class="tab-active px-16 py-6 font-black uppercase text-xl">Athlete</button>
                     <button onclick="showTab('volunteer')" id="btn-volunteer" class="tab-inactive px-16 py-6 font-black uppercase text-xl">Volunteer</button>
                 </div>
             </div>
-
             <div id="tab-athlete" class="p-20 bg-surface-container space-y-10 transition-all duration-500">
                 <h3 class="text-5xl font-black uppercase italic">Athlete Registration</h3>
                 <p class="text-on-surface-variant text-2xl font-light">Do you have what it takes? Register now for the Pro Power League.</p>
                 <a href="https://forms.gle/hW87XsDC9KyxtHmW7" target="_blank" class="btn-primary text-2xl px-20">Open Athlete Form</a>
             </div>
-
             <div id="tab-volunteer" class="hidden p-20 bg-surface-container space-y-10 transition-all duration-500">
                 <h3 class="text-5xl font-black uppercase italic">Crew Registration</h3>
                 <p class="text-on-surface-variant text-2xl font-light">Join the team behind the scenes and help run the arena.</p>
                 <a href="https://forms.gle/swZApf9k6FRke7Y47" target="_blank" class="btn-primary text-2xl px-20">Open Volunteer Form</a>
             </div>
-        </div>
-    </section>
-
-    <section class="py-40 px-10">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
-            <div class="overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=2070&auto=format&fit=crop" class="w-full grayscale brightness-50 hover:grayscale-0 transition-all duration-1000" alt="Vision">
-            </div>
-            <div class="space-y-12">
-                <h2 class="font-headline font-black text-8xl uppercase leading-none italic">Power is <br><span class="text-primary">Impulse</span></h2>
-                <p class="text-3xl text-on-surface-variant leading-relaxed italic font-light border-l-8 border-primary pl-10">
-                    "Strength is more than moving weight. It is the impulse that drives you to overcome what others find impossible."
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-40 px-10 bg-surface-container text-center" id="contact">
-        <div class="max-w-4xl mx-auto space-y-12">
-            <h2 class="font-headline font-black text-7xl uppercase italic">Contact <span class="text-primary">Support</span></h2>
-            <p class="text-2xl text-on-surface-variant font-light">Queries regarding the league or sponsorship?</p>
-            <a href="https://forms.gle/gNZ359f12ze1mRkz7" target="_blank" class="btn-primary text-3xl px-24 italic">Reach Out Now</a>
         </div>
     </section>
 </main>
@@ -257,11 +208,9 @@
         }
     }
 
-    // Scroll Logic: Header shrink and Top Button visibility
     window.onscroll = function() {
         const header = document.getElementById('main-header');
         const topBtn = document.getElementById('scrollTopBtn');
-        
         if (document.body.scrollTop > 150 || document.documentElement.scrollTop > 150) {
             header.classList.remove('h-32'); header.classList.add('h-24', 'bg-[#0f131d]');
             topBtn.classList.add('show');
@@ -271,6 +220,5 @@
         }
     };
 </script>
-
 </body>
 </html>
